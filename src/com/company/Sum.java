@@ -14,11 +14,21 @@ public class Sum implements Money {
     }
 
     @Override
-    public Integer amountInConventionalUnit() {
-        Integer sum = 0;
+    public Long amountInConventionalUnit() {
+        Long sum = Long.valueOf(0);
         for (Money currentMoney : money) {
             sum = sum + currentMoney.amountInConventionalUnit();
         }
         return sum;
     }
+
+    @Override
+    public Long amountInUnit() {
+        Long sum = Long.valueOf(0);
+        for (Money currentMoney : money) {
+            sum = sum + currentMoney.amountInUnit();
+        }
+        return sum;
+    }
 }
+

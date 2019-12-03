@@ -1,24 +1,25 @@
 package com.company;
 
 public class Jpy implements Money{
-    private final Integer amount;
-    private final Integer courseInConventionalUnit;
+    private final Long amount;
 
-    public Jpy(Integer amount, Integer courseInConventionalUnit) {
-        this.amount = amount;
-        this.courseInConventionalUnit = courseInConventionalUnit;
+    public Jpy(Integer jpy) {
+        this.amount = Long.valueOf(jpy * 1);
+    }
+    public Jpy(Money money) {
+        this.amount = money.amountInConventionalUnit();
     }
 
-    public Integer getAmount() {
+    public Long getAmount() {
         return amount;
     }
 
-    public Integer getCourseInConventionalUnit() {
-        return courseInConventionalUnit;
+    @Override
+    public Long amountInConventionalUnit() {
+        return amount;
+    }
+    public Long amountInUnit() {
+        return amount / 1;
     }
 
-    @Override
-    public Integer amountInConventionalUnit() {
-        return amount * courseInConventionalUnit;
-    }
 }

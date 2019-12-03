@@ -1,25 +1,27 @@
 package com.company;
 
 public class Usd implements Money{
-    private final Integer amount;
-    private final Integer courseInConventionalUnit;
+    private final Long amount;
 
-    public Usd(Integer amount, Integer courseInConventionalUnit) {
-        this.amount = amount;
-        this.courseInConventionalUnit = courseInConventionalUnit;
+    public Usd(Integer usd) {
+        this.amount = Long.valueOf(usd * 128);
     }
 
-    public Integer getAmount() {
+    public Usd(Money money) {
+        this.amount = money.amountInConventionalUnit();
+    }
+
+    public Long getAmount() {
         return amount;
     }
 
-    public Integer getCourseInConventionalUnit() {
-        return courseInConventionalUnit;
+    @Override
+    public Long amountInConventionalUnit() {
+        return amount;
+    }
+    public Long amountInUnit() {
+        return amount / 128;
     }
 
-    @Override
-    public Integer amountInConventionalUnit() {
-        return amount * courseInConventionalUnit;
-    }
 }
 

@@ -1,5 +1,7 @@
 package com.company;
 
 public interface Money {
-    public Integer amountInConventionalUnit();
+    public Long amountInConventionalUnit();
+
+    public Long amountInUnit();
 }

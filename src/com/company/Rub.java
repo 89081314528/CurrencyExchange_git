@@ -1,24 +1,29 @@
 package com.company;
 public class Rub implements Money{
-    private final Integer amount;
-    private final Integer courseInConventionalUnit;
-    // ничего, что я сумму и курс в у е в один конструктор положила?
+    private final Long amount;
+    // amount - рубли * курс
 
-    public Rub(Integer amount, Integer courseInConventionalUnit) {
-        this.amount = amount;
-        this.courseInConventionalUnit = courseInConventionalUnit;
+    public Rub(Integer roubles) {
+        this.amount = Long.valueOf(roubles * 2);
     }
 
-    public Integer getAmount() {
+    public Rub(Money money) {
+        this.amount = money.amountInConventionalUnit();
+    }
+
+    public Long getAmount() {
         return amount;
     }
 
-    public Integer getCourseInConventionalUnit() {
-        return courseInConventionalUnit;
+    @Override
+    public Long amountInConventionalUnit() {
+        return amount;
+    }
+    @Override
+    public Long amountInUnit() {
+        return amount / 2;
     }
 
-    @Override
-    public Integer amountInConventionalUnit() {
-        return amount * courseInConventionalUnit;
-    }
+
+
 }
