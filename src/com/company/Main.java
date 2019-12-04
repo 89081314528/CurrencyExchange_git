@@ -25,5 +25,7 @@ public class Main {
         Sum sum = new Sum(moneyList);
         System.out.println("sum.amountInConventionalUnit() = " + sum.amountInConventionalUnit());
         System.out.println(sum.amountInUnit());
+        Rub total  = new Rub (sum);
+        System.out.println(total.amountInUnit());
     }
 }
