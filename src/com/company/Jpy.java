@@ -1,6 +1,6 @@
 package com.company;
 
-public class Jpy implements Money{
+public class Jpy implements Money, Unit{
     private final Long amount;
 
     public Jpy(Integer jpy) {
@@ -18,6 +18,7 @@ public class Jpy implements Money{
     public Long amountInConventionalUnit() {
         return amount;
     }
+    @Override
     public Long amountInUnit() {
         return amount / 1;
     }

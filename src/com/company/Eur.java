@@ -1,6 +1,6 @@
 package com.company;
 
-public class Eur implements Money {
+public class Eur implements Money, Unit {
     private final Long amount;
 
     public Eur(Integer eur) {
@@ -18,6 +18,7 @@ public class Eur implements Money {
     public Long amountInConventionalUnit() {
         return amount;
     }
+    @Override
     public Long amountInUnit() {
         return amount / 140;
     }

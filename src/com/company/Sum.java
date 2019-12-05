@@ -21,14 +21,5 @@ public class Sum implements Money {
         }
         return sum;
     }
-
-    @Override
-    public Long amountInUnit() {
-        Long sum = Long.valueOf(0);
-        for (Money currentMoney : money) {
-            sum = sum + currentMoney.amountInUnit();
-        }
-        return sum;
-    }
 }
 

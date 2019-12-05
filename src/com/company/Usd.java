@@ -1,10 +1,10 @@
 package com.company;
 
-public class Usd implements Money{
+public class Usd implements Money, Unit{
     private final Long amount;
 
-    public Usd(Integer usd) {
-        this.amount = Long.valueOf(usd * 128);
+    public Usd(Integer dollar) {
+        this.amount = Long.valueOf(dollar * 128);
     }
 
     public Usd(Money money) {
@@ -19,6 +19,7 @@ public class Usd implements Money{
     public Long amountInConventionalUnit() {
         return amount;
     }
+    @Override
     public Long amountInUnit() {
         return amount / 128;
     }

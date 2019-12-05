@@ -1,5 +1,5 @@
 package com.company;
-public class Rub implements Money{
+public class Rub implements Money, Unit{
     private final Long amount;
     // amount - рубли * курс
 
