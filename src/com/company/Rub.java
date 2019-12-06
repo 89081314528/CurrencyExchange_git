@@ -4,7 +4,7 @@ public class Rub implements Money, Unit{
     // amount - рубли * курс
 
     public Rub(Integer roubles) {
-        this.amount = Long.valueOf(roubles * 2);
+        this.amount = Long.valueOf(roubles * 1);
     }
 
     public Rub(Money money) {
@@ -21,7 +21,7 @@ public class Rub implements Money, Unit{
     }
     @Override
     public Long amountInUnit() {
-        return amount / 2;
+        return amount / 1;
     }
 
 

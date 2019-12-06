@@ -4,7 +4,7 @@ public class Usd implements Money, Unit{
     private final Long amount;
 
     public Usd(Integer dollar) {
-        this.amount = Long.valueOf(dollar * 128);
+        this.amount = Long.valueOf(dollar * 63);
     }
 
     public Usd(Money money) {
@@ -21,7 +21,7 @@ public class Usd implements Money, Unit{
     }
     @Override
     public Long amountInUnit() {
-        return amount / 128;
+        return amount / 63;
     }
 
 }

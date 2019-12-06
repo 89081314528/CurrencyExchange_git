@@ -14,7 +14,7 @@ public class Main {
 
     public static void main(String[] args) {
         // или рубли или деньги. таким образом деньги переврдятся в у е
-        Rub rub = new Rub(new Usd(1) );
+        Rub rub = new Rub(new Usd(1));
         Usd usd = new Usd(1);
         Eur eur = new Eur(1);
         Jpy jpy = new Jpy(1);
